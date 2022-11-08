@@ -7,6 +7,8 @@ describe('Funcionalidade página Forms', () => {
         await formsScreen.preencherInput()
         await formsScreen.setSwitch()
         await formsScreen.setDropDown()
-        await formsScreen.setActive()      
+        await formsScreen.setActive()
+        
+        expect (await formsScreen.formComponentsName()).toEqual('This button is')
     });
 });

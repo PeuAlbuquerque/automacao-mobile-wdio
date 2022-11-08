@@ -8,7 +8,7 @@ class FormsScreen {
 
     get #dropDown() { return $('~Dropdown') }
 
-    get #active() {return $('~~button-Active')}
+    get #formCompoents() {return $('android.widget.TextView')}
 
     async goToForms() {
         await this.#forms.click()
@@ -33,6 +33,11 @@ class FormsScreen {
         await driver.execute('mobile: scroll', { direction: 'down', strategy: 'accessibility id', selector: '~button-Active' })
         await $('~button-Active').click()
     }
+
+    async formComponentsName() {
+        return await this.#formCompoents.getText() 
+    }
+
 }
 
 module.exports = new FormsScreen 
